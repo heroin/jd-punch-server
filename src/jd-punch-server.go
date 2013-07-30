@@ -14,8 +14,8 @@ import (
 )
 
 const (
-	SERVER        = "JD-PUNCH-SERVER"
-	PORT          = 12324
+	SERVER = "JD-PUNCH-SERVER"
+	PORT   = 12324
 )
 
 var (

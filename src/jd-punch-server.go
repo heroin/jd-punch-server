@@ -83,8 +83,9 @@ func user_add(out http.ResponseWriter, request *http.Request) {
 			Start:    start,
 		})
 		TASK_LAST_MODIFY_DATE = time.Now()
+		fmt.Fprintf(out, "success")
 	} else {
-		fmt.Println("error")
+		fmt.Fprintf(out, "error")
 	}
 }
 
@@ -111,8 +112,9 @@ func user_del(out http.ResponseWriter, request *http.Request) {
 			}
 		}
 		TASK_LAST_MODIFY_DATE = time.Now()
+		fmt.Fprintf(out, "success")
 	} else {
-		fmt.Println("error")
+		fmt.Fprintf(out, "error")
 	}
 }
 
@@ -124,8 +126,9 @@ func cancel_add(out http.ResponseWriter, request *http.Request) {
 	if strings.TrimSpace(username) != "" {
 		TASK_DATA.Cancel = append(TASK_DATA.Cancel, fmt.Sprintf("%s-%d", username, trigger))
 		TASK_LAST_MODIFY_DATE = time.Now()
+		fmt.Fprintf(out, "success")
 	} else {
-		fmt.Println("error")
+		fmt.Fprintf(out, "error")
 	}
 }
 
@@ -152,8 +155,9 @@ func cancel_del(out http.ResponseWriter, request *http.Request) {
 			}
 		}
 		TASK_LAST_MODIFY_DATE = time.Now()
+		fmt.Fprintf(out, "success")
 	} else {
-		fmt.Println("error")
+		fmt.Fprintf(out, "error")
 	}
 }
 

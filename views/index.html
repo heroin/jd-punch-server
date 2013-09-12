@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="js/html5shiv.js"></script>
+    </[endif]-->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="js/core.js"></script>
+  </head>
+
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+    <div class="container">
+      <div class="row">
+        <section id="download-files">
+          <div class="main">
+            <ul id="tab-nav" class="nav nav-tabs">
+              <li class="active" id="nav-task-list"><a href="#task-list" data-toggle="tab">Task List</a></li>
+              <li id="nav-add-task"><a href="#add-task" data-toggle="tab">Add Task</a></li>
+            </ul>
+            <div id="tab-content" class="tab-content">
+              <div id="task-list" class="tab-pane fade in active">
+                <table id="tab-task-list" class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>UserName</th>
+                      <th>PassWord</th>
+                      <th class="center time">Trigger</th>
+                      <th class="center start">Start</th>
+                      <th class="center operate">Operate</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+                <div class="row-fluid">
+                  <div class="span6">
+                    <table id="tab-cancel-list" class="table table-bordered table-striped">
+                      <thead>
+                        <tr>
+                          <th>Cancel</th>
+                          <th class="center time">Trigger</th>
+                          <th class="center operate">Operate</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="span6">
+                    <table id="tab-heartbeat" class="table table-bordered table-striped">
+                      <thead>
+                        <tr>
+                          <th>Heartbeat</th>
+                          <th class="center time">LastTime</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div id="add-task" class="tab-pane fade">
+                <form class="form-horizontal" action="/user/add">
+                  <div class="control-group">
+                    <label class="control-label" for="username">UserName</label>
+                    <div class="controls">
+                      <input type="text" id="username" name="username" />
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="password">PassWord</label>
+                    <div class="controls">
+                      <input type="text" id="password" name="password" />
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Trigger</label>
+                    <div class="controls">
+                      <div id="trigger-widget" class="input-append date">
+                        <input type="text" readonly data-format="yyyy-MM-dd hh:mm:ss" class="trigger" id="trigger" name="trigger" />
+                        <span class="add-on">
+                          <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">Start</label>
+                    <div class="controls">
+                      <label class="radio">
+                        <input type="radio" name="start" value="true" checked />true
+                      </label>
+                      <label class="radio">
+                        <input type="radio" name="start" value="false" />false
+                      </label>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <div class="controls">
+                      <button id="btn-add-task" type="button" class="btn btn-primary">Add</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

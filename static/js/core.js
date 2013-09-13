@@ -121,7 +121,8 @@ $(document).ready(function () {
         start_var = $('input:radio[name="start"]:checked').val();
         trigger_var = $.trim($("#trigger").val());
         if (username_var != "" && password_var != "" && trigger_var != "") {
-            trigger = new Date(trigger_var).getTime() / 1000;
+            trigger_date = new Date(trigger_var.substring(0, 4), trigger_var.substring(5, 7) - 1, trigger_var.substring(8, 10), trigger_var.substring(11, 13), trigger_var.substring(14, 16), trigger_var.substring(17, 19));
+            trigger = trigger_date.getTime() / 1000;
             $.post("/user/add", {"username": username_var, "password": password_var, "trigger": trigger, "start": start_var}, function (result) {
                 if (result == "success") {
                     load();
